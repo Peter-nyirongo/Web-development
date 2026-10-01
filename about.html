@@ -1,28 +1,27 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About QuickNotes</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!--  HEADER AND NAV  -->
     <header>
         <h1>QuickNotes</h1>
-        <p>Capture our thoughts instantly.</p>
+        <p>Capture your thoughts instantly.</p>
         <nav>
-            <a href="index.html">Home</a> | 
+            <a href="index.html">Home</a>
             <a href="about.html">About</a>
         </nav>
     </header>
 
     <main>
-        <!-- 1. Heading and introduction -->
-        <h2>About QuickNotes</h2>
-        <p>QuickNotes is a simple and efficient tool designed to help you capture your thoughts instantly. <br> It is perfect for students, professionals, and anyone who needs to organize their ideas on the fly.</p>
+        <section>
+            <h2>About QuickNotes</h2>
+            <p>QuickNotes is a simple and efficient tool designed to help you capture your thoughts instantly. It is perfect for students, professionals, and anyone who needs to organize their ideas on the fly.</p>
+        </section>
 
-        <!-- 2. Ordered list with at least 3 steps -->
         <section>
             <h3>How to use QuickNotes</h3>
             <ol>
@@ -32,17 +31,16 @@
             </ol>
         </section>
 
-        <!-- 3. Unordered list of features -->
         <section>
             <h3>Features</h3>
-            <ul>
+            <!-- REQUIRED: class="features" added here -->
+            <ul class="features">
                 <li>Lightning-fast note creation</li>
                 <li>Automatic cloud syncing</li>
                 <li>Clean, distraction-free interface</li>
             </ul>
         </section>
 
-        <!-- 4. Table with heading -->
         <section>
             <h3>Keyboard Shortcuts</h3>
             <table>
@@ -65,7 +63,6 @@
             </table>
         </section>
 
-        <!-- 5. Feedback form with labelled -->
         <section>
             <h3>Send Feedback</h3>
             <form action="#" method="POST">
@@ -73,23 +70,19 @@
                     <label for="user-name">Name:</label>
                     <input type="text" id="user-name" name="user-name" required>
                 </div>
-                <br>
                 <div>
                     <label for="user-email">Email:</label>
                     <input type="email" id="user-email" name="user-email" required>
                 </div>
-                <br>
                 <div>
                     <label for="user-message">Message:</label>
                     <textarea id="user-message" name="user-message" required></textarea>
                 </div>
-                <br>
                 <button type="submit">Submit Feedback</button>
             </form>
         </section>
     </main>
 
-    <!-- FOOTER -->
     <footer>
         <p>&copy; 2026 QuickNotes</p>
     </footer>
