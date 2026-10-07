@@ -1,169 +1,93 @@
-/* 1. Reset and Base Styles */
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* Define default (light mode) CSS variables */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --textarea-bg: #f9f9f9;
+  --textarea-border: #cccccc;
+  --btn-bg: #007bff;
+  --btn-text: #ffffff;
+  --btn-hover: #0056b3;
 }
 
+/* Redefine variables for dark mode */
+body.dark {
+  --bg-color: #1e1e1e;
+  --text-color: #f0f0f0;
+  --textarea-bg: #2d2d2d;
+  --textarea-border: #555555;
+  --btn-bg: #4a90e2;
+  --btn-text: #ffffff;
+  --btn-hover: #357abd;
+}
+
+/* Base styles using the variables */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    line-height: 1.6;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* 2. Header Styles */
-header {
-    background-color: #2c3e50;
-    color: white;
-    padding: 24px 20px;
-    text-align: center;
-}
-
-header h1 {
-    margin-bottom: 8px;
-}
-
-/* 3. Navigation Styles (Flexbox) */
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    margin-top: 16px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease, text-decoration 0.3s ease;
-}
-
-nav a:hover {
-    color: #3498db;
-    text-decoration: underline;
-}
-
-/* 4. Main Content & Card Styles */
 main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 0 20px;
-}
-
-section {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-}
-
-section h2, section h3 {
-    margin-bottom: 12px;
-    color: #2c3e50;
-}
-
-/* 5. Features Grid (Responsive Cards) */
-.features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 16px;
-    list-style: none;
-    padding: 0;
-}
-
-.features li {
-    background-color: #e8f4f8;
-    padding: 16px;
-    border-radius: 8px;
-    text-align: center;
-    border: 1px solid #d1e7dd;
-}
-
-/* 6. Table Styles */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-}
-
-th {
-    background-color: #f8f9fa;
-}
-
-/* 7. Form Styles (Stacked Vertically, Full Width) */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 4px;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-family: inherit;
+  font-weight: bold;
 }
 
 textarea {
-    resize: vertical;
-    min-height: 100px;
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  background-color: var(--textarea-bg);
+  border: 1px solid var(--textarea-border);
+  color: var(--text-color);
+  border-radius: 5px;
+  resize: vertical;
+  font-family: inherit;
+  box-sizing: border-box; /* Ensures padding doesn't break width */
 }
 
-/* 8. Button Styles with Transition */
+.counters {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
 button {
-    padding: 12px;
-    background-color: #2c3e50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.1s ease;
+  padding: 10px 15px;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
 }
 
 button:hover {
-    background-color: #3498db;
+  background-color: var(--btn-hover);
 }
 
-button:active {
-    transform: scale(0.98);
+/* Counter warning classes */
+.warning {
+  color: orange;
 }
 
-/* 9. Footer Styles */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #2c3e50;
-    color: white;
-    margin-top: 40px;
-}
-
-/* 10. Media Query for Small Screens (max-width: 600px) */
-@media (max-width: 600px) {
-    header {
-        padding: 16px 10px;
-    }
-    
-    header h1 {
-        font-size: 1.5rem;
-    }
-    
-    main {
-        padding: 0 10px;
-    }
+.over {
+  color: red;
+  font-weight: bold;
 }
